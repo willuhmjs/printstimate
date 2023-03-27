@@ -8,14 +8,15 @@ import type { PrintConditions, Printer } from './printers';
  */
 
 export function estimateCost(conditions: PrintConditions, printer: Printer): number {
-  const filamentCost = (conditions.amountInGrams / 1000) * conditions.costOfFilament; // filament cost in dollars
-  const initialWarmUpCost = (printer.warmUpWatts / 1000) * conditions.electricityCost * (printer.warmUpTime / 60); // warm-up cost in dollars
-  const electricityCostPerHour = (printer.printWatts / 1000) * conditions.electricityCost; // electricity cost per hour in dollars
-  const totalPrintTimeCost = electricityCostPerHour * conditions.printTime; // total electricity cost for print time in dollars
-  const totalCost = filamentCost + totalPrintTimeCost + initialWarmUpCost;
-  return totalCost;
+	const filamentCost = (conditions.amountInGrams / 1000) * conditions.costOfFilament; // filament cost in dollars
+	const initialWarmUpCost =
+		(printer.warmUpWatts / 1000) * conditions.electricityCost * (printer.warmUpTime / 60); // warm-up cost in dollars
+	const electricityCostPerHour = (printer.printWatts / 1000) * conditions.electricityCost; // electricity cost per hour in dollars
+	const totalPrintTimeCost = electricityCostPerHour * conditions.printTime; // total electricity cost for print time in dollars
+	const totalCost = filamentCost + totalPrintTimeCost + initialWarmUpCost;
+	return totalCost;
 }
 
 export function formatCost(cost: number): string {
-  return `$${cost.toFixed(2)}`;
+	return `$${cost.toFixed(2)}`;
 }
