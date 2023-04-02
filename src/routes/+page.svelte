@@ -25,8 +25,8 @@
 	<section>
 		<h1>Cost Estimator</h1>
 		<p>
-			Enter information regarding your printer and what you are printing. The cost estimator will then calculate the cost of printing your
-			object.
+			Enter information regarding your printer and what you are printing. The cost estimator will
+			then calculate the cost of printing your object.
 		</p>
 
 		<h3>Estimated Cost</h3>
@@ -122,9 +122,10 @@
 		justify-content: space-between;
 	}
 
-	h2,h2,h3 {
+	h1,
+	h2,
+	h3 {
 		margin: 0;
 		margin-bottom: 1rem;
-
 	}
 </style>
