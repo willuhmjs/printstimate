@@ -4,13 +4,13 @@ export type PrintConditions = {
 	electricityCost: number;
 	costOfFilament: number;
 	otherCosts: number;
+	warmupTime: number;
 };
 
 export type Printer = {
 	name: string;
 	printWatts: number;
-	warmUpWatts: number;
-	warmUpTime: number;
+	warmupWatts: number;
 };
 
 export async function getPrinters() {
@@ -20,8 +20,7 @@ export async function getPrinters() {
 		printers.push({
 			name: module.name,
 			printWatts: module.printWatts,
-			warmUpWatts: module.warmUpWatts,
-			warmUpTime: module.warmUpTime
+			warmupWatts: module.warmUpWatts,
 		});
 	});
 	return Promise.all(printers);
