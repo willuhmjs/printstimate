@@ -25,24 +25,21 @@
 	<section>
 		<h1>Cost Estimator</h1>
 		<p>
-			Enter the amount of filament you want to print, the time it will take to print, and the cost
-			of electricity and filament. The cost estimator will then calculate the cost of printing your
+			Enter information regarding your printer and what you are printing. The cost estimator will then calculate the cost of printing your
 			object.
 		</p>
-	</section>
 
-	<details open>
-		<summary>Estimated Cost</summary>
+		<h3>Estimated Cost</h3>
 		<p>
 			{formatCost(estimateCost(conditions, printer), fixedTo)}
 		</p>
 		<!-- bind input to fixedTo value  btween 2 and 10 with a range -->
 		<label for="fixed-to">Fixed to {fixedTo} digits</label>
 		<input id="fixed-to" type="range" min="2" max="20" bind:value={fixedTo} />
-	</details>
+	</section>
 
-	<details open>
-		<summary>Print Conditions</summary>
+	<section>
+		<h3>Print Conditions</h3>
 		<div>
 			<div>
 				<label for="amount-in-grams">Amount in grams</label>
@@ -78,15 +75,10 @@
 				<input id="other-costs" type="number" bind:value={conditions.otherCosts} />
 			</div>
 		</div>
-	</details>
-	<details open>
-		<summary>Printer Information</summary>
+	</section>
+	<section class="printerInformation">
 		<div>
-			<label for="search">Search</label>
-			<br />
-			<input id="search" type="text" />
-		</div>
-		<div>
+			<h3>Printer Information</h3>
 			<div>
 				<label for="name">Name</label>
 				<br />
@@ -103,23 +95,36 @@
 				<br />
 				<input id="warmup-watts" type="number" bind:value={printer.warmupWatts} />
 			</div>
-			
 		</div>
-	</details>
+		<div>
+			<label for="search">Search</label>
+			<br />
+			<input id="search" type="text" />
+		</div>
+	</section>
 </main>
 
 <style>
 	main {
 		margin: auto;
 		max-width: 600px;
+	}
+
+	section {
 		border: 1px solid #ccc;
+		border-radius: 10px;
+		padding: 1rem;
+		margin: 1rem 0;
 	}
 
-	input {
-		width: 100%;
+	.printerInformation {
+		display: flex;
+		justify-content: space-between;
 	}
 
-	* {
-		box-sizing: border-box
+	h2,h2,h3 {
+		margin: 0;
+		margin-bottom: 1rem;
+
 	}
 </style>
