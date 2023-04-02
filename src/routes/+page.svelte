@@ -3,6 +3,8 @@
 	import type { PrintConditions, Printer } from '../lib/printers';
 	import { getPrinters } from '../lib/printers';
 
+	let fixedTo = 2;
+
 	let conditions: PrintConditions = {
 		amountInGrams: 4,
 		printTime: .36,
@@ -27,14 +29,26 @@
 			print, and the cost of electricity and filament. The cost estimator will
 			then calculate the cost of printing your object.
 		</p>
-
-		<h2>Estimated Cost</h2>
-		<p>
-			{formatCost(estimateCost(conditions, printer))}
-		</p>
 	</section>
+	
+	<details open>
+		<summary>Estimated Cost</summary>
+		<p>
+			{formatCost(estimateCost(conditions, printer), fixedTo)}
+		</p>
+		<!-- bind input to fixedTo value  btween 2 and 10 with a range -->
+		<label for="fixed-to">Fixed to {fixedTo} digits</label>
+		<input
+			id="fixed-to"
+			type="range"
+			min="2"
+			max="20"
+			bind:value={fixedTo}
+		/>
+		
+	</details>
 
-	<details>
+	<details open>
 		<summary>Print Conditions</summary>
 		<div>
 			<label for="amount-in-grams">Amount in grams</label>
@@ -72,7 +86,7 @@
 			<input id="other-costs" type="number" bind:value={conditions.otherCosts} />
 		</div>
 	</details>
-	<details>
+	<details open>
 		<summary>Printer Information</summary>
 		<div>
 			<!-- name, printWatts, warmupWatts inputs -->

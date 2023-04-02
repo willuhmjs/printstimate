@@ -17,6 +17,6 @@ export function estimateCost(conditions: PrintConditions, printer: Printer): num
 	return totalCost;
 }
 
-export function formatCost(cost: number): string {
-	return `$${cost.toFixed(2)}`;
+export function formatCost(cost: number, toFixed: number): string {
+	return `$${cost.toFixed(toFixed)}`;
 }
