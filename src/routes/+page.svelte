@@ -82,6 +82,11 @@
 	<details open>
 		<summary>Printer Information</summary>
 		<div>
+			<label for="search">Search</label>
+			<br />
+			<input id="search" type="text" />
+		</div>
+		<div>
 			<div>
 				<label for="name">Name</label>
 				<br />
@@ -98,11 +103,7 @@
 				<br />
 				<input id="warmup-watts" type="number" bind:value={printer.warmupWatts} />
 			</div>
-			<div>
-				<label for="search">Search</label>
-				<br />
-				<input id="search" type="text" />
-			</div>
+			
 		</div>
 	</details>
 </main>
@@ -112,5 +113,13 @@
 		margin: auto;
 		max-width: 600px;
 		border: 1px solid #ccc;
+	}
+
+	input {
+		width: 100%;
+	}
+
+	* {
+		box-sizing: border-box
 	}
 </style>
