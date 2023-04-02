@@ -12,11 +12,17 @@ export type Printer = {
 	warmUpTime: number;
 };
 
-export const printers: Printer[] = [
-	{
-		name: 'Ender 3',
-		printWatts: 40,
-		warmUpWatts: 40,
-		warmUpTime: 5
-	}
-];
+export async function getPrinters() {
+	const raw = import.meta.glob('./printers/*.json', { eager: true });
+	const printers: Printer[] = [];
+	Object.values(raw).forEach((module) => {
+		printers.push({
+
+			name: module.name,
+			printWatts: module.printWatts,
+			warmUpWatts: module.warmUpWatts,
+			warmUpTime: module.warmUpTime
+		});
+	})
+	return Promise.all(printers);
+}

@@ -1,0 +1,7 @@
+
+{
+"name": "ender",
+"printWatts": 40,
+"warmUpWatts": 40,
+"warmUpTime": 5
+}
