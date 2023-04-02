@@ -3,6 +3,7 @@ export type PrintConditions = {
 	printTime: number;
 	electricityCost: number;
 	costOfFilament: number;
+	otherCosts: number;
 };
 
 export type Printer = {

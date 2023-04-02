@@ -13,7 +13,7 @@ export function estimateCost(conditions: PrintConditions, printer: Printer): num
 		(printer.warmUpWatts / 1000) * conditions.electricityCost * (printer.warmUpTime / 60); // warm-up cost in dollars
 	const electricityCostPerHour = (printer.printWatts / 1000) * conditions.electricityCost; // electricity cost per hour in dollars
 	const totalPrintTimeCost = electricityCostPerHour * conditions.printTime; // total electricity cost for print time in dollars
-	const totalCost = filamentCost + totalPrintTimeCost + initialWarmUpCost;
+	const totalCost = filamentCost + totalPrintTimeCost + initialWarmUpCost + conditions.otherCosts; // total cost in dollars
 	return totalCost;
 }
 

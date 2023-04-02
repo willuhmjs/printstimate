@@ -7,7 +7,8 @@
 		amountInGrams: 4,
 		printTime: 22 / 60,
 		electricityCost: 0.11,
-		costOfFilament: 25
+		costOfFilament: 25,
+		otherCosts: 0
 	};
 </script>
 
