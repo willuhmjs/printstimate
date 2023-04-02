@@ -9,7 +9,6 @@
 		electricityCost: 0.11,
 		costOfFilament: 25
 	};
-
 </script>
 
 <div class="wrapper">
@@ -22,7 +21,7 @@
 				{formatCost(estimateCost(conditions, printer))}
 			</div>
 		{/each}
-	{/await}	
+	{/await}
 	<!-- has two inputs side by side for the amount in grams and print cost -->
 	<!-- accordion menu for other conditions (electricity cost and cost of filament) -->
 	<!-- accordion menu for choosing a printer. has a search bar -->

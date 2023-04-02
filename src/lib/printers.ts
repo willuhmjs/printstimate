@@ -17,12 +17,11 @@ export async function getPrinters() {
 	const printers: Printer[] = [];
 	Object.values(raw).forEach((module) => {
 		printers.push({
-
 			name: module.name,
 			printWatts: module.printWatts,
 			warmUpWatts: module.warmUpWatts,
 			warmUpTime: module.warmUpTime
 		});
-	})
+	});
 	return Promise.all(printers);
 }
