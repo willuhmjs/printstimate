@@ -110,6 +110,11 @@
 		max-width: 600px;
 	}
 
+	* {
+		box-sizing: border-box;
+		font-family: sans-serif;
+	}
+
 	section {
 		border: 1px solid #ccc;
 		border-radius: 10px;
@@ -120,6 +125,21 @@
 	.printerInformation {
 		display: flex;
 		justify-content: space-between;
+	}
+
+	input {
+		padding: 1ch;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		width: 100%;
+	}
+
+	section div div {
+		margin-bottom: 1rem;
+	}
+
+	section div div * {
+		margin: 3px 0;
 	}
 
 	h1,
