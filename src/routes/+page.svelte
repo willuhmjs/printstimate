@@ -101,7 +101,7 @@
 		flex-direction: row;
 	}
 
-	.inputContent input {
+	.inputContent input[type=number	] {
 		flex: 1;
 		padding: 1ch;
 		border: 1px solid #ccc;
@@ -109,7 +109,7 @@
 		margin-top: 0.6em;
 	}
 
-	.inputContent input:nth-child(2) {
+	.inputContent input:not(:first-child) {
 		margin-left: 1ch;
 	}
 
