@@ -20,7 +20,7 @@ export async function getPrinters() {
 		printers.push({
 			name: module.name,
 			printWatts: module.printWatts,
-			warmupWatts: module.warmUpWatts
+			warmupWatts: module.warmupWatts
 		});
 	});
 	return Promise.all(printers);
