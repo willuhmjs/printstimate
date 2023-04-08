@@ -30,46 +30,46 @@
 	{estimateCost(conditions, printer)}
 	<Box title="Print Info">
 		<div class="inputItem">
-			<label for="amountInGrams">Print Weight</label>
+			<label for="amountInGrams">Print Weight (g)</label>
 			<br>
 			<div class="inputContent">
-				<input id="amountInGrams" type="number" bind:value={conditions.amountInGrams} />
+				<input placeholder="Grams" id="amountInGrams" type="number" bind:value={conditions.amountInGrams} />
 			</div>
 		</div>
 		<div class="inputItem">
-			<label for="printTime">Print Time</label>
+			<label for="printTime">Print Time (hr, min)</label>
 			<br>
 			<div class="inputContent">
-				<input class="printTime" type="number" bind:value={printTimeHours} />
-				<input class="printTime" type="number" bind:value={printTimeMinutes} />
+				<input placeholder="Hours" class="printTime" type="number" bind:value={printTimeHours} />
+				<input placeholder="Minutes" class="printTime" type="number" bind:value={printTimeMinutes} />
 			</div>
 		</div>
 		<div class="inputItem">
-			<label for="warmupTime">Warm Up Time</label>
+			<label for="warmupTime">Warm Up Time (min)</label>
 			<br>
 			<div class="inputContent">
-				<input id="warmupTime" type="number" bind:value={conditions.warmupTime} />
+				<input placeholder="Minutes" id="warmupTime" type="number" bind:value={conditions.warmupTime} />
 			</div>
 		</div>
 		<div class="inputItem">
-			<label for="electricityCost">Electricity Cost</label>
+			<label for="electricityCost">Electricity Cost ($/kWH)</label>
 			<br>
 			<div class="inputContent">
-				<input id="electricityCost" type="number" bind:value={conditions.electricityCost} />
+				<input placeholder="Dollars per Kilowatt-hour" id="electricityCost" type="number" bind:value={conditions.electricityCost} />
 			</div>
 		</div>
 		<div class="inputItem">
-			<label for="costOfFilament">Cost of Filament</label>
+			<label for="costOfFilament">Cost of Filament ($/kg)</label>
 			<br>
 			<div class="inputContent">
-				<input id="costOfFilament" type="number" bind:value={conditions.costOfFilament} />
+				<input placeholder="Dollars per Kilogram" id="costOfFilament" type="number" bind:value={conditions.costOfFilament} />
 			</div>
 		</div>
 		<div class="inputItem">
-			<label for="otherCosts">Other Costs</label>
+			<label for="otherCosts">Other Costs ($)</label>
 			<br>
 			<div class="inputContent">
-				<input id="otherCosts" type="number" bind:value={conditions.otherCosts} />
+				<input placeholder="Dollars" id="otherCosts" type="number" bind:value={conditions.otherCosts} />
 			</div>
 		</div>
 	</Box>
