@@ -20,13 +20,14 @@
 	};
 
 	let printer: Printer = {
-		name: 'Ender 3',
-		printWatts: 40,
-		warmupWatts: 10
+		name: 'Custom',
+		printWatts: 0,
+		warmupWatts: 0
 	};
 </script>
 
 <main>
+	{estimateCost(conditions, printer)}
 	<Box title="Print Info">
 		<div class="inputItem">
 			<label for="amountInGrams">Print Weight</label>
@@ -72,7 +73,27 @@
 			</div>
 		</div>
 	</Box>
-	{estimateCost(conditions, printer)}
+	
+	<Box title="Printer">
+		<div class="inputItem">
+			<label for="printer">Printer</label>
+			<br>
+			<div class="inputContent">
+				<select id="printer" bind:value={printer}>	
+					{#await getPrinters()}
+						<option>Custom</option>
+					{:then printers}
+						{#each printers as printer}
+							<option value={printer}>{printer.name}</option>
+						{/each}
+					{/await}
+				</select>
+				<input type="number" disabled={printer.name !== "Custom"} bind:value={printer.printWatts}/>
+				<input type="number" disabled={printer.name !== "Custom"} bind:value={printer.warmupWatts} />
+
+			</div>
+		</div>
+	</Box>
 </main>
 <style>
 	.inputContent {
