@@ -27,8 +27,6 @@
 		warmupWatts: 0
 	};
 
-	$: cost = estimateCost(conditions, printer);
-	$: console.log(cost);
 </script>
 
 <main>
