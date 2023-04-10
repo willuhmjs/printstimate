@@ -30,7 +30,6 @@
 </script>
 
 <main>
-	{cost}
 		<Box title="Print Info">
 		<div class="inputItem">
 			<label for="amountInGrams">Print Weight (g)</label>
