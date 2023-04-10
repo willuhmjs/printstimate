@@ -90,9 +90,7 @@
 				</select>
 				<input type="number" disabled={printer.name !== "Custom"} bind:value={printer.printWatts}/>
 				<input type="number" disabled={printer.name !== "Custom"} bind:value={printer.warmupWatts} />
-
 			</div>
-		</div>
 	</Box>
 </main>
 <style>
@@ -101,7 +99,15 @@
 		flex-direction: row;
 	}
 
-	.inputContent input[type=number	] {
+	.inputContent input[type=number] {
+		flex: 1;
+		padding: 1ch;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		margin-top: 0.6em;
+	}
+
+	.inputContent select {
 		flex: 1;
 		padding: 1ch;
 		border: 1px solid #ccc;
