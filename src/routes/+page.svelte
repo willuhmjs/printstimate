@@ -7,28 +7,33 @@
 
 	let fixedTo = 2;
 
-	let printTimeMinutes: number = 4;
+	let printTimeMinutes: number = 0;
 	let printTimeHours: number = 10;
 
-	$: conditions = {
+	let conditions = {
 		amountInGrams: 4,
-		printTime: printTimeHours + (printTimeMinutes/60),
+		printTime: 0,
 		warmupTime: 5,
 		electricityCost: 0.11,
 		costOfFilament: 25,
 		otherCosts: 0
 	};
 
+	$: conditions.printTime = printTimeHours + (printTimeMinutes/60);
+
 	let printer: Printer = {
 		name: 'Custom',
 		printWatts: 0,
 		warmupWatts: 0
 	};
+
+	$: cost = estimateCost(conditions, printer);
+	$: console.log(cost);
 </script>
 
 <main>
-	{estimateCost(conditions, printer)}
-	<Box title="Print Info">
+	{cost}
+		<Box title="Print Info">
 		<div class="inputItem">
 			<label for="amountInGrams">Print Weight (g)</label>
 			<br>
