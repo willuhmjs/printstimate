@@ -19,7 +19,10 @@
 		otherCosts: 0
 	};
 
-	$: conditions.printTime = printTimeHours + (printTimeMinutes/60);
+	$: conditions = {
+        ...conditions,
+        printTime: printTimeHours + (printTimeMinutes/60)
+	}
 
 	let printer: Printer = {
 		name: 'Custom',
@@ -30,6 +33,7 @@
 </script>
 
 <main>
+	{estimateCost(conditions, printer)}
 		<Box title="Print Info">
 		<div class="inputItem">
 			<label for="amountInGrams">Print Weight (g)</label>
