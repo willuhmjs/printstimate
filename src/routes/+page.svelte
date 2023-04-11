@@ -40,6 +40,20 @@
 
 <main>
 	{estimateCost(conditions, printer)}
+	<Box title="Printer">
+		<div class="inputItem">
+			<label for="printer">Printer</label>
+			<br>
+			<div class="inputContent">
+				<select id="printer" bind:value={printer}>	
+					{#each printers as printer}
+						<option value={printer}>{printer.name}</option>
+					{/each}
+				</select>
+				<input type="number" disabled={printer.name !== "Custom"} bind:value={printer.printWatts}/>
+				<input type="number" disabled={printer.name !== "Custom"} bind:value={printer.warmupWatts} />
+			</div>
+	</Box>
 		<Box title="Print Info">
 		<div class="inputItem">
 			<label for="amountInGrams">Print Weight (g)</label>
@@ -86,20 +100,7 @@
 		</div>
 	</Box>
 	
-	<Box title="Printer">
-		<div class="inputItem">
-			<label for="printer">Printer</label>
-			<br>
-			<div class="inputContent">
-				<select id="printer" bind:value={printer}>	
-					{#each printers as printer}
-						<option value={printer}>{printer.name}</option>
-					{/each}
-				</select>
-				<input type="number" disabled={printer.name !== "Custom"} bind:value={printer.printWatts}/>
-				<input type="number" disabled={printer.name !== "Custom"} bind:value={printer.warmupWatts} />
-			</div>
-	</Box>
+	
 </main>
 <style>
 	.inputContent {
