@@ -24,12 +24,18 @@
         printTime: printTimeHours + (printTimeMinutes/60)
 	}
 
-	let printer: Printer = {
-		name: 'Custom',
-		printWatts: 0,
-		warmupWatts: 0
-	};
-
+	const printers = getPrinters();
+	// move the object in the array with the name value "Custom" to the front
+	printers.sort((a, b) => {
+		if (a.name === "Custom") {
+			return -1;
+		} else if (b.name === "Custom") {
+			return 1;
+		} else {
+			return 0;
+		}
+	});
+	let printer: Printer = printers[0];
 </script>
 
 <main>
@@ -86,13 +92,9 @@
 			<br>
 			<div class="inputContent">
 				<select id="printer" bind:value={printer}>	
-					{#await getPrinters()}
-						<option>Custom</option>
-					{:then printers}
-						{#each printers as printer}
-							<option value={printer}>{printer.name}</option>
-						{/each}
-					{/await}
+					{#each printers as printer}
+						<option value={printer}>{printer.name}</option>
+					{/each}
 				</select>
 				<input type="number" disabled={printer.name !== "Custom"} bind:value={printer.printWatts}/>
 				<input type="number" disabled={printer.name !== "Custom"} bind:value={printer.warmupWatts} />
