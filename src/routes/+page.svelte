@@ -50,8 +50,10 @@
 						<option value={printer}>{printer.name}</option>
 					{/each}
 				</select>
-				<input type="number" disabled={printer.name !== 'Custom'} bind:value={printer.printWatts} />
+				<input type="number" min=0 disabled={printer.name !== 'Custom'} bind:value={printer.printWatts} />
 				<input
+					min=0
+
 					type="number"
 					disabled={printer.name !== 'Custom'}
 					bind:value={printer.warmupWatts}
@@ -65,6 +67,7 @@
 			<br />
 			<div class="inputContent">
 				<input
+					min=0
 					placeholder="Grams"
 					id="amountInGrams"
 					type="number"
@@ -78,6 +81,7 @@
 			<div class="inputContent">
 				<input placeholder="Hours" class="printTime" type="number" bind:value={printTimeHours} />
 				<input
+					min=0
 					placeholder="Minutes"
 					class="printTime"
 					type="number"
@@ -90,6 +94,7 @@
 			<br />
 			<div class="inputContent">
 				<input
+				min=0
 					placeholder="Minutes"
 					id="warmupTime"
 					type="number"
@@ -102,6 +107,8 @@
 			<br />
 			<div class="inputContent">
 				<input
+				min=0
+
 					placeholder="Dollars per Kilowatt-hour"
 					id="electricityCost"
 					type="number"
@@ -114,6 +121,8 @@
 			<br />
 			<div class="inputContent">
 				<input
+				min=0
+
 					placeholder="Dollars per Kilogram"
 					id="costOfFilament"
 					type="number"
@@ -126,6 +135,8 @@
 			<br />
 			<div class="inputContent">
 				<input
+				min=0
+
 					placeholder="Dollars"
 					id="otherCosts"
 					type="number"
