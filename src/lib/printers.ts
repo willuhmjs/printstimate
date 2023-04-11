@@ -13,8 +13,9 @@ export type Printer = {
 	warmupWatts: number;
 };
 
-export async function getPrinters() {
-	const raw = import.meta.glob('./printers/*.json', { eager: true });
+const raw = import.meta.glob('./printers/*.json', { eager: true });
+
+export function getPrinters() {
 	const printers: Printer[] = [];
 	Object.values(raw).forEach((module) => {
 		printers.push({
@@ -23,5 +24,5 @@ export async function getPrinters() {
 			warmupWatts: module.warmupWatts
 		});
 	});
-	return Promise.all(printers);
+	return printers;
 }
