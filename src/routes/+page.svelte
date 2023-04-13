@@ -268,4 +268,10 @@
 		text-decoration: underline;
 		color: #666;
 	}
+
+	@media (max-width: 600px) {
+		.printerInput {
+			display: block;
+		}
+	}
 </style>
