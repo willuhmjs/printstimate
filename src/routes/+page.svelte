@@ -5,7 +5,7 @@
 
 	import Box from '$lib/Box.svelte';
 
-	let fixedTo = 2;
+	let toFixed = 2;
 
 	let printTimeMinutes: number = 0;
 	let printTimeHours: number = 10;
@@ -39,7 +39,22 @@
 </script>
 
 <main>
-	{estimateCost(conditions, printer)}
+	<Box title="Cost Estimate">
+		<p class="costEstimate">{formatCost(estimateCost(conditions, printer), toFixed)}</p>
+		<div class="inputItem">
+			<label for="toFixed">Decimal Places</label>
+			<br />
+			<div class="inputContent">
+				<input
+					min="2"
+					max="10"
+					placeholder="Decimal Places"
+					id="toFixed"
+					type="number"
+					bind:value={toFixed}
+				/>
+			</div>
+	</Box>
 	<Box title="Printer">
 		<div class="printerInput">
 		<div class="inputItem">
