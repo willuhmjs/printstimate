@@ -15,6 +15,7 @@
 		border-radius: 4px;
 		padding: 1em;
 		margin: 1em 0;
+		padding-bottom: 0;
 		background-color: #f5f5f5;
 	}
 </style>
