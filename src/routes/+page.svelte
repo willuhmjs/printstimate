@@ -41,6 +41,7 @@
 <main>
 	{estimateCost(conditions, printer)}
 	<Box title="Printer">
+		<div class="printerInput">
 		<div class="inputItem">
 			<label for="printer">Printer</label>
 			<br />
@@ -50,21 +51,36 @@
 						<option value={printer}>{printer.name}</option>
 					{/each}
 				</select>
+			</div>
+		</div>
+		<div class="inputItem">
+			<label for="printWatts">Print Watts</label>
+			<br />
+			<div class="inputContent">
 				<input
-					type="number"
 					min="0"
-					disabled={printer.name !== 'Custom'}
+					placeholder="Watts"
+					id="printWatts"
+					type="number"
 					bind:value={printer.printWatts}
 				/>
+			</div>
+		</div>
+		<div class="inputItem">
+			<label for="warmupWatts">Warm Up Watts</label>
+			<br />
+			<div class="inputContent">
 				<input
 					min="0"
+					placeholder="Watts"
+					id="warmupWatts"
 					type="number"
-					disabled={printer.name !== 'Custom'}
 					bind:value={printer.warmupWatts}
 				/>
 			</div>
-		</div></Box
-	>
+		</div>
+	</div>
+	</Box>
 	<Box title="Print Info">
 		<div class="inputItem">
 			<label for="amountInGrams">Print Weight (g)</label>
@@ -152,6 +168,17 @@
 	.inputContent {
 		display: flex;
 		flex-direction: row;
+	}
+
+	.printerInput {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 1ch;
+	}
+
+	.printerInput div {
+		flex: 1;
 	}
 
 	.inputContent input[type='number'] {
