@@ -60,7 +60,7 @@
 	>
 	<Box title="Printer">
 		<div class="printerInput">
-			<div class="inputItem">
+			<div class="inputItem printerSelectItem">
 				<label for="printer">Printer</label>
 				<br />
 				<div class="inputContent">
@@ -224,6 +224,7 @@
 		border: 1px solid #ccc;
 		border-radius: 4px;
 		margin-top: 0.6em;
+		min-width: 0;
 	}
 
 	.inputContent input:not(:first-child) {
@@ -232,6 +233,10 @@
 
 	.inputItem {
 		margin-bottom: 1em;
+	}
+
+	.printerSelectItem {
+		min-width: 0;
 	}
 
 	.costEstimate {
