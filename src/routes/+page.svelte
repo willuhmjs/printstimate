@@ -39,6 +39,12 @@
 </script>
 
 <main>
+	<nav>
+		<h1>printstimate</h1>
+		<p>
+			<a href="https://github.com/willuhmjs/printstimate" target="_blank"><i class="fa-brands fa-github"></i></a>
+		</p>
+	</nav>
 	<Box title="Cost Estimate">
 		<label for="costEstimate">Cost Estimate</label>
 		<p class="costEstimate">{formatCost(estimateCost(conditions, printer), toFixed)}</p>
@@ -58,10 +64,10 @@
 			</div>
 		</div></Box
 	>
-	<Box title="Printer">
+	<Box title="3D Printer">
 		<div class="printerInput">
 			<div class="inputItem printerSelectItem">
-				<label for="printer">Printer</label>
+				<label for="printer">3D Printer</label>
 				<br />
 				<div class="inputContent">
 					<select id="printer" bind:value={printer}>
@@ -242,5 +248,24 @@
 	.costEstimate {
 		font-size: 1rem;
 		font-weight: bold;
+	}
+
+	nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid #ccc;
+	}
+
+	nav a {
+		color: #000;
+		text-decoration: none;
+		font-size: 1.5rem;
+	}
+
+	nav a:hover {
+		text-decoration: underline;
+		color: #666;
 	}
 </style>
