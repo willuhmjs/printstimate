@@ -79,6 +79,7 @@
 					id="printWatts"
 					type="number"
 					bind:value={printer.printWatts}
+					disabled={printer.name !== 'Custom'}
 				/>
 			</div>
 		</div>
@@ -92,6 +93,7 @@
 					id="warmupWatts"
 					type="number"
 					bind:value={printer.warmupWatts}
+					disabled={printer.name !== 'Custom'}
 				/>
 			</div>
 		</div>
