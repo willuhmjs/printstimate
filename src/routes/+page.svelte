@@ -40,6 +40,7 @@
 
 <main>
 	<Box title="Cost Estimate">
+		<label for="costEstimate">Cost Estimate</label>
 		<p class="costEstimate">{formatCost(estimateCost(conditions, printer), toFixed)}</p>
 		<div class="inputItem">
 			<label for="toFixed">Decimal Places</label>
@@ -231,5 +232,10 @@
 
 	.inputItem {
 		margin-bottom: 1em;
+	}
+
+	.costEstimate {
+		font-size: 1rem;
+		font-weight: bold;
 	}
 </style>
