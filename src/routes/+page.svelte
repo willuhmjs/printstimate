@@ -55,49 +55,50 @@
 				/>
 				<output for="toFixed">{toFixed}</output>
 			</div>
-	</Box>
+		</div></Box
+	>
 	<Box title="Printer">
 		<div class="printerInput">
-		<div class="inputItem">
-			<label for="printer">Printer</label>
-			<br />
-			<div class="inputContent">
-				<select id="printer" bind:value={printer}>
-					{#each printers as printer}
-						<option value={printer}>{printer.name}</option>
-					{/each}
-				</select>
+			<div class="inputItem">
+				<label for="printer">Printer</label>
+				<br />
+				<div class="inputContent">
+					<select id="printer" bind:value={printer}>
+						{#each printers as printer}
+							<option value={printer}>{printer.name}</option>
+						{/each}
+					</select>
+				</div>
+			</div>
+			<div class="inputItem">
+				<label for="printWatts">Print Watts</label>
+				<br />
+				<div class="inputContent">
+					<input
+						min="0"
+						placeholder="Watts"
+						id="printWatts"
+						type="number"
+						bind:value={printer.printWatts}
+						disabled={printer.name !== 'Custom'}
+					/>
+				</div>
+			</div>
+			<div class="inputItem">
+				<label for="warmupWatts">Warm Up Watts</label>
+				<br />
+				<div class="inputContent">
+					<input
+						min="0"
+						placeholder="Watts"
+						id="warmupWatts"
+						type="number"
+						bind:value={printer.warmupWatts}
+						disabled={printer.name !== 'Custom'}
+					/>
+				</div>
 			</div>
 		</div>
-		<div class="inputItem">
-			<label for="printWatts">Print Watts</label>
-			<br />
-			<div class="inputContent">
-				<input
-					min="0"
-					placeholder="Watts"
-					id="printWatts"
-					type="number"
-					bind:value={printer.printWatts}
-					disabled={printer.name !== 'Custom'}
-				/>
-			</div>
-		</div>
-		<div class="inputItem">
-			<label for="warmupWatts">Warm Up Watts</label>
-			<br />
-			<div class="inputContent">
-				<input
-					min="0"
-					placeholder="Watts"
-					id="warmupWatts"
-					type="number"
-					bind:value={printer.warmupWatts}
-					disabled={printer.name !== 'Custom'}
-				/>
-			</div>
-		</div>
-	</div>
 	</Box>
 	<Box title="Print Info">
 		<div class="inputItem">
@@ -207,7 +208,8 @@
 		align-items: center;
 	}
 
-	.inputContent input[type='number'], .inputContent input[type='range'] {
+	.inputContent input[type='number'],
+	.inputContent input[type='range'] {
 		flex: 1;
 		padding: 1ch;
 		border: 1px solid #ccc;
