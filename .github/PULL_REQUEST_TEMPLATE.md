@@ -1,6 +1,8 @@
+<!-- If you are not adding or modifying a 3D printer, delete the templating below. -->
+
 # 3D Printer Request
 
-## Purpose
+## Printer Change
 
 - [ ] Adds a new 3D printer.
 - [ ] Modifies an existing 3D printer.
