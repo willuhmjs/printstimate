@@ -1,5 +1,5 @@
 {
 	"name": "Kingroon KP3S",
 	"printWatts": 40,
-	"warmupWatts": 40
+	"warmupWatts": 300
 }
