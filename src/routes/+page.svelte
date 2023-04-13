@@ -10,7 +10,7 @@
 	let printTimeMinutes: number = 0;
 	let printTimeHours: number = 10;
 
-	let conditions = {
+	let conditions: PrintConditions = {
 		amountInGrams: 4,
 		printTime: 0,
 		warmupTime: 5,
