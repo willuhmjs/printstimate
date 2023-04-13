@@ -44,15 +44,16 @@
 		<div class="inputItem">
 			<label for="toFixed">Decimal Places</label>
 			<br />
-			<div class="inputContent">
+			<div class="inputContent rangeContent">
 				<input
 					min="2"
 					max="10"
 					placeholder="Decimal Places"
 					id="toFixed"
-					type="number"
+					type="range"
 					bind:value={toFixed}
 				/>
+				<output for="toFixed">{toFixed}</output>
 			</div>
 	</Box>
 	<Box title="Printer">
@@ -196,7 +197,15 @@
 		flex: 1;
 	}
 
-	.inputContent input[type='number'] {
+	.rangeContent {
+		display: flex;
+		flex-direction: row;
+		gap: 1ch;
+		vertical-align: middle;
+		align-items: center;
+	}
+
+	.inputContent input[type='number'], .inputContent input[type='range'] {
 		flex: 1;
 		padding: 1ch;
 		border: 1px solid #ccc;
