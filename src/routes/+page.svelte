@@ -230,11 +230,18 @@
 		border: 1px solid #ccc;
 		border-radius: 4px;
 		margin-top: 0.6em;
-		min-width: 0;
 	}
 
 	.inputContent input:not(:first-child) {
 		margin-left: 1ch;
+	}
+
+	input,
+	select {
+		width: 100%;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
 	}
 
 	.inputItem {
