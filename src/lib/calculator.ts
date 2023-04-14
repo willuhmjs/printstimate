@@ -8,7 +8,6 @@ import type { PrintConditions, Printer } from './printers';
  */
 
 export function estimateCost(conditions: PrintConditions, printer: Printer): number {
-	// todo fix NaN issue or whatever is causing it
 	const filamentCost = (conditions.amountInGrams / 1000) * conditions.costOfFilament; // filament cost in dollars
 	const initialWarmUpCost =
 		(printer.warmupWatts / 1000) * conditions.electricityCost * (conditions.warmupTime / 60); // warm-up cost in dollars
