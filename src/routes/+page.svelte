@@ -7,11 +7,11 @@
 
 	let toFixed = 2;
 
-	let printTimeMinutes: number = 0;
-	let printTimeHours: number = 10;
+	let printTimeMinutes: number = 30;
+	let printTimeHours: number = 1;
 
 	let conditions: PrintConditions = {
-		amountInGrams: 4,
+		amountInGrams: 15,
 		printTime: 0,
 		warmupTime: 5,
 		electricityCost: 0.11,
