@@ -2,6 +2,7 @@
 	import { estimateCost, formatCost } from '../lib/calculator';
 	import type { PrintConditions, Printer } from '../lib/printers';
 	import { getPrinters } from '../lib/printers';
+	import { printConditions } from "$lib/defaults";
 
 	import Box from '$lib/Box.svelte';
 
@@ -13,17 +14,7 @@
 	let laborTimeMinutes: number = 0;
 	let laborTimeHours: number = 0;
 	
-	let conditions: PrintConditions = {
-		amountInGrams: 15,
-		printTime: 0,
-		warmupTime: 5,
-		electricityCost: 0.11,
-		costOfFilament: 25,
-		otherCosts: 0,
-		laborTime: 0,
-		laborCost: 0
-	};
-
+	let conditions = { ...printConditions };
 	$: conditions = {
 		...conditions,
 		printTime: printTimeHours + printTimeMinutes / 60,
