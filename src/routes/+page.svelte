@@ -186,7 +186,7 @@
 			<label for="laborCost">Labor Cost ($/hr)</label>
 			<br />
 			<div class="inputContent">
-				<input placeholder="Hours" class="laborCost" type="number" bind:value={conditions.laborCost} />
+				<input placeholder="Dollars per Hour" class="laborCost" type="number" bind:value={conditions.laborCost} />
 			</div>
 		</div>
 		<div class="inputItem">
