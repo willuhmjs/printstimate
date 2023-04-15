@@ -5,6 +5,8 @@ export type PrintConditions = {
 	costOfFilament: number;
 	otherCosts: number;
 	warmupTime: number;
+	laborCost: number;
+	laborTime: number;
 };
 
 export type Printer = {

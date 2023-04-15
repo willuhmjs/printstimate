@@ -10,18 +10,24 @@
 	let printTimeMinutes: number = 30;
 	let printTimeHours: number = 1;
 
+	let laborTimeMinutes: number = 0;
+	let laborTimeHours: number = 0;
+	
 	let conditions: PrintConditions = {
 		amountInGrams: 15,
 		printTime: 0,
 		warmupTime: 5,
 		electricityCost: 0.11,
 		costOfFilament: 25,
-		otherCosts: 0
+		otherCosts: 0,
+		laborTime: 0,
+		laborCost: 0
 	};
 
 	$: conditions = {
 		...conditions,
-		printTime: printTimeHours + printTimeMinutes / 60
+		printTime: printTimeHours + printTimeMinutes / 60,
+		laborTime: laborTimeHours + laborTimeMinutes / 60
 	};
 
 	const printers = getPrinters();
@@ -107,7 +113,7 @@
 			</div>
 		</div>
 	</Box>
-	<Box title="Print Info">
+	<Box title="Print Information">
 		<div class="inputItem">
 			<label for="amountInGrams">Print Weight (g)</label>
 			<br />
@@ -174,6 +180,31 @@
 				/>
 			</div>
 		</div>
+	</Box>
+	<Box title="Labor Expenses">
+		<div class="inputItem">
+			<label for="laborCost">Labor Cost ($/hr)</label>
+			<br />
+			<div class="inputContent">
+				<input placeholder="Hours" class="laborCost" type="number" bind:value={conditions.laborCost} />
+			</div>
+		</div>
+		<div class="inputItem">
+			<label for="laborTime">Labor Time (hr, min)</label>
+			<br />
+			<div class="inputContent">
+				<input placeholder="Hours" class="laborTime" type="number" bind:value={laborTimeHours} />
+				<input
+					min="0"
+					placeholder="Minutes"
+					class="laborTime"
+					type="number"
+					bind:value={laborTimeMinutes}
+				/>
+			</div>
+		</div>
+	</Box>
+	<Box title="Other Expenses">
 		<div class="inputItem">
 			<label for="otherCosts">Other Costs ($)</label>
 			<br />
