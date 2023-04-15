@@ -9,7 +9,9 @@ const genericConditions: PrintConditions = {
 	warmupTime: 5,
 	electricityCost: 0.11,
 	costOfFilament: 25,
-	otherCosts: 0
+	otherCosts: 0,
+	laborCost: 0,
+	laborTime: 0
 };
 
 describe('basic calculator test', () => {
