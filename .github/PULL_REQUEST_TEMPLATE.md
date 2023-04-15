@@ -9,7 +9,7 @@
 
 ## Printer Information
 
-Please provide the following information about the printer you would like to add:
+Please provide the following information about the printer you would like to add. This data should be when the printer is at standard operating conditions. For instance, most FDM printers will have a print temperature of 200C and a heated bed temperature of 60C. If you are unsure of the operating conditions, please include the maximum operating conditions.
 
 - Printer Name:
 - Print Watts:
